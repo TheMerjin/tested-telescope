@@ -1,11 +1,239 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-	<Welcome />
+	<main class="relative min-h-screen">
+		<!-- Background Image with Overlay (fixed full page) -->
+		<div class="fixed inset-0 z-0">
+			<div class="absolute inset-0 bg-gradient-to-br from-green-900/95 via-green-900/90 to-green-900/95"></div>
+		</div>
+
+		<!-- Content Container with background image -->
+		<div
+			class="relative z-10 pt-20 bg-[url('https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&q=80')] bg-cover bg-center"
+			style="background-attachment: local;"
+		>
+			<!-- Add a semi-transparent dark overlay inside content container -->
+			<div class="bg-green-900/80 backdrop-blur-md">
+				<!-- Hero Section -->
+				<section class="min-h-[90vh] flex items-center justify-center px-4 relative overflow-hidden">
+					<!-- Animated background elements -->
+					<div class="absolute inset-0 overflow-hidden">
+						<div class="absolute -top-24 -right-24 w-96 h-96 bg-yellow-400/10 rounded-full blur-3xl animate-float"></div>
+						<div class="absolute -bottom-24 -left-24 w-96 h-96 bg-green-400/10 rounded-full blur-3xl animate-float-delayed"></div>
+					</div>
+					
+					<div class="max-w-4xl mx-auto text-center relative z-10">
+						<h1 class="text-7xl md:text-8xl font-bold mb-6 animate-fade-in text-white tracking-tight">
+							3v3 Soccer
+							<span class="block text-yellow-400 animate-slide-up">Tournament</span>
+						</h1>
+						<p class="text-2xl md:text-3xl mb-12 text-white/90 font-light max-w-2xl mx-auto animate-fade-in-delayed">
+							Join the Ultimate Street Soccer Experience
+						</p>
+						<div class="flex flex-col md:flex-row gap-4 justify-center">
+							<a
+								href="/register"
+								class="group inline-block bg-yellow-400 text-green-900 font-semibold px-8 py-4 rounded-full text-lg hover:bg-yellow-300 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-yellow-400/20 animate-fade-in-delayed-2"
+							>
+								Register Your Team
+								<span class="inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
+							</a>
+							<a
+								href="#rules"
+								class="group inline-block bg-white/10 backdrop-blur-sm text-white font-semibold px-8 py-4 rounded-full text-lg hover:bg-white/20 transition-all duration-300 animate-fade-in-delayed-2"
+							>
+								Learn More
+								<span class="inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
+							</a>
+						</div>
+					</div>
+				</section>
+
+				<!-- Features Section -->
+				<section class="py-20 px-4">
+					<div class="max-w-6xl mx-auto">
+						<div class="text-center mb-16">
+							<h2 class="text-4xl font-bold text-white tracking-tight mb-4">Why Join Our Tournament?</h2>
+							<p class="text-white/70 font-light max-w-2xl mx-auto">Experience the perfect blend of competition, camaraderie, and pure soccer excitement</p>
+						</div>
+						<div class="grid md:grid-cols-3 gap-8">
+							<div class="group bg-white/10 backdrop-blur-sm p-8 rounded-2xl transform hover:scale-105 transition-all duration-300 hover:shadow-xl hover:shadow-white/5 hover:bg-white/15">
+								<h3 class="text-2xl font-bold mb-4 text-white tracking-tight group-hover:text-yellow-400 transition-colors">Fast-Paced Action</h3>
+								<p class="text-white/90 font-light">Experience the thrill of 3v3 soccer with non-stop action and quick transitions.</p>
+							</div>
+							<div class="group bg-white/10 backdrop-blur-sm p-8 rounded-2xl transform hover:scale-105 transition-all duration-300 hover:shadow-xl hover:shadow-white/5 hover:bg-white/15">
+								<h3 class="text-2xl font-bold mb-4 text-white tracking-tight group-hover:text-yellow-400 transition-colors">Team Spirit</h3>
+								<p class="text-white/90 font-light">Build lasting friendships and create unforgettable memories with your team.</p>
+							</div>
+							<div class="group bg-white/10 backdrop-blur-sm p-8 rounded-2xl transform hover:scale-105 transition-all duration-300 hover:shadow-xl hover:shadow-white/5 hover:bg-white/15">
+								<h3 class="text-2xl font-bold mb-4 text-white tracking-tight group-hover:text-yellow-400 transition-colors">Great Prizes</h3>
+								<p class="text-white/90 font-light">Compete for amazing prizes and the title of Street Soccer Champions!</p>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<!-- Tournament Info -->
+				<section class="py-20 px-4">
+					<div class="max-w-6xl mx-auto">
+						<div class="grid md:grid-cols-2 gap-12 items-center">
+							<div class="space-y-8">
+								<div>
+									<h2 class="text-4xl font-bold text-white tracking-tight mb-4">Tournament Details</h2>
+									<p class="text-white/70 font-light">Everything you need to know about the tournament</p>
+								</div>
+								<div class="space-y-4">
+									<div class="group bg-white/10 backdrop-blur-sm p-6 rounded-xl hover:bg-white/15 transition-all duration-300 hover:shadow-lg hover:shadow-white/5">
+										<h3 class="text-2xl font-bold mb-2 text-white tracking-tight group-hover:text-yellow-400 transition-colors">When?</h3>
+										<p class="text-lg text-white/90 font-light">Every Saturday, 10:00 AM - 6:00 PM</p>
+									</div>
+									<div class="group bg-white/10 backdrop-blur-sm p-6 rounded-xl hover:bg-white/15 transition-all duration-300 hover:shadow-lg hover:shadow-white/5">
+										<h3 class="text-2xl font-bold mb-2 text-white tracking-tight group-hover:text-yellow-400 transition-colors">Where?</h3>
+										<p class="text-lg text-white/90 font-light">Central City Sports Complex</p>
+									</div>
+									<div class="group bg-white/10 backdrop-blur-sm p-6 rounded-xl hover:bg-white/15 transition-all duration-300 hover:shadow-lg hover:shadow-white/5">
+										<h3 class="text-2xl font-bold mb-2 text-white tracking-tight group-hover:text-yellow-400 transition-colors">Entry Fee</h3>
+										<p class="text-lg text-white/90 font-light">$150 per team (includes tournament t-shirts)</p>
+									</div>
+								</div>
+							</div>
+							<div class="relative">
+								<div class="absolute -inset-4 bg-gradient-to-r from-yellow-400/20 to-green-400/20 rounded-2xl blur-xl animate-pulse-slow"></div>
+								<img
+									src="https://images.unsplash.com/photo-1508098682722-e99c643e5e76?auto=format&fit=crop&q=80"
+									alt="Soccer players"
+									class="relative rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-300 hover:shadow-white/10"
+								/>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<!-- Call to Action -->
+				<section class="py-20 px-4">
+					<div class="max-w-4xl mx-auto text-center">
+						<div class="inline-block mb-4 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-white/90 text-sm font-medium animate-pulse">
+							Limited Spots Available
+						</div>
+						<h2 class="text-4xl font-bold mb-6 text-white tracking-tight">Ready to Show Your Skills?</h2>
+						<p class="text-xl mb-8 text-white/90 max-w-2xl mx-auto font-light">
+							Join players competing for glory in the most exciting 3v3 soccer tournament of the year!
+						</p>
+						<a
+							href="/register"
+							class="group inline-block bg-yellow-400 text-green-900 font-semibold px-12 py-5 rounded-full text-xl hover:bg-yellow-300 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-yellow-400/20"
+						>
+							Register Your Team Now
+							<span class="inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
+						</a>
+					</div>
+				</section>
+			</div>
+		</div>
+	</main>
 </Layout>
+
+<style>
+	@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+	:global(html) {
+		font-family: 'Inter', sans-serif;
+		scroll-behavior: smooth;
+	}
+
+	:global(body) {
+		overflow-x: hidden;
+	}
+
+	.animate-fade-in {
+		animation: fadeIn 1s ease-in;
+	}
+
+	.animate-fade-in-delayed {
+		animation: fadeIn 1s ease-in 0.3s both;
+	}
+
+	.animate-fade-in-delayed-2 {
+		animation: fadeIn 1s ease-in 0.6s both;
+	}
+
+	.animate-slide-up {
+		animation: slideUp 0.8s ease-out 0.3s both;
+	}
+
+	.animate-float {
+		animation: float 6s ease-in-out infinite;
+	}
+
+	.animate-float-delayed {
+		animation: float 6s ease-in-out 2s infinite;
+	}
+
+	.animate-pulse {
+		animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+	}
+
+	.animate-pulse-slow {
+		animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+	}
+
+	@keyframes fadeIn {
+		from {
+			opacity: 0;
+			transform: translateY(20px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	@keyframes slideUp {
+		from {
+			opacity: 0;
+			transform: translateY(40px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	@keyframes float {
+		0%, 100% {
+			transform: translateY(0) scale(1);
+		}
+		50% {
+			transform: translateY(-20px) scale(1.05);
+		}
+	}
+
+	@keyframes pulse {
+		0%, 100% {
+			opacity: 1;
+		}
+		50% {
+			opacity: 0.7;
+		}
+	}
+
+	/* Custom scrollbar */
+	::-webkit-scrollbar {
+		width: 8px;
+	}
+
+	::-webkit-scrollbar-track {
+		background: rgba(255, 255, 255, 0.1);
+	}
+
+	::-webkit-scrollbar-thumb {
+		background: rgba(255, 255, 255, 0.2);
+		border-radius: 4px;
+	}
+
+	::-webkit-scrollbar-thumb:hover {
+		background: rgba(255, 255, 255, 0.3);
+	}
+</style>
